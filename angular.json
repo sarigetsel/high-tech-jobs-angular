@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "0d11e758-9434-41bf-ab69-c7414df177c4"
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -10,7 +11,10 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "skipTests": false
+        },
+        "@schematics/angular:service": {
+          "skipTests": false
         }
       },
       "root": "",
@@ -30,6 +34,7 @@
               }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "server": "src/main.server.ts",
