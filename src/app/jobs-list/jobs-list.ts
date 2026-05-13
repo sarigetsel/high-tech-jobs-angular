@@ -1,13 +1,17 @@
-import { Component, input } from '@angular/core';
-import { Job } from '../shared/job';
-import { JobItem } from '../jobs/job-item/job-item';
+import { Component, inject } from '@angular/core';
+import { JobItem } from '../job-item/job-item';
+import { JobsService } from '../shared/jobs.service';
 
 @Component({
   selector: 'app-jobs-list',
+  standalone: true,
   imports: [JobItem],
   templateUrl: './jobs-list.html',
   styleUrl: './jobs-list.css',
 })
 export class JobsList {
-   jobs = input<Job[]>();
+
+  private jobsService = inject(JobsService);
+
+  jobs = this.jobsService.getJobs;
 }

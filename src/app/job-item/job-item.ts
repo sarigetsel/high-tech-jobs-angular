@@ -1,12 +1,16 @@
 import { Component, input } from '@angular/core';
-import { Job } from '../../shared/job';
+import { Job } from '../shared/job';
+import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-job-item',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './job-item.html',
   styleUrl: './job-item.css',
 })
 export class JobItem {
-   job = input<Job>();
+   job = input.required<Job>();
 }
+

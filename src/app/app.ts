@@ -1,16 +1,14 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { JobsList } from './jobs-list/jobs-list';
-import { JobsService } from './shared/jobs.service';
+import { Navbar } from './navbar/navbar';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, JobsList],
+  standalone: true,  
+  imports: [RouterOutlet, Navbar],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
   protected readonly title = signal('High-techJobs');
-
-constructor(public jobService: JobsService) {}
 }
